@@ -48,12 +48,13 @@ export default {
     }
   },
   created() {
-    fetch(`https://cors-anywhere.herokuapp.com/https://loripsum.net/api/1/short`)
+    // fetch('https://cors-anywhere.herokuapp.com/https://loripsum.net/api/1/short')
+    fetch('https://baconipsum.com/api/?type=meat&paras=1&format=text')
         .then(r => r.text())
         .then(data => {
               this.text = data
-                  .replace(/^\s+|\s+$/g, '')
-                  .replace(/<\/?p>/g, '')
+                  // .replace(/^\s+|\s+$/g, '')
+                  // .replace(/<\/?p>/g, '')
               this.text_loaded = true
             }
         );
