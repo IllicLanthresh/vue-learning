@@ -14,12 +14,28 @@
             :src="seededImageUrl"
             @load="image_loaded = true"
         >
+          <template v-slot:placeholder>
+            <v-row
+                justify="center"
+                align="center"
+                class="fill-height ma-0"
+            >
+              <v-progress-circular
+                  indeterminate
+              ></v-progress-circular>
+            </v-row>
+          </template>
           <v-card-title class="title">
             {{ title }}
           </v-card-title>
         </v-img>
-        <v-card-text>
+        <v-card-text v-if="text">
           {{ text }}
+        </v-card-text>
+        <v-card-text v-else style="text-align: center">
+          <v-progress-circular
+              indeterminate
+          ></v-progress-circular>
         </v-card-text>
       </v-card>
     </v-lazy>
@@ -31,7 +47,7 @@ export default {
   data: () => ({
     image_loaded: false,
     text_loaded: false,
-    text: 'loading...'
+    text: ''
   }),
   props: {
     title: {
@@ -55,8 +71,6 @@ export default {
         .then(r => r.text())
         .then(data => {
               this.text = data
-                  // .replace(/^\s+|\s+$/g, '')
-                  // .replace(/<\/?p>/g, '')
               this.text_loaded = true
             }
         );
