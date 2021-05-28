@@ -1,4 +1,4 @@
-# model-viewer
+# some-viewer
 
 ## Project setup
 ```
