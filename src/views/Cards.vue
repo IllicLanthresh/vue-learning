@@ -81,6 +81,9 @@ export default {
     card_qty() {
       pushRouter(this)
     }
+  },
+  created() {
+    pushRouter(this)
   }
 };
 </script>
