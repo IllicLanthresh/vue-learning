@@ -66,7 +66,7 @@ export default {
   },
   data() {
     return {
-      card_qty: parseInt(this.$route.params.card_qty) || 20,
+      card_qty: parseInt(this.$route.params.card_qty) || 6,
       width: parseInt(this.$route.params.width) || 300,
       card_qty_min: 0,
       card_qty_max: 90,
