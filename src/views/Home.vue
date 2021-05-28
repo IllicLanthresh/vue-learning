@@ -55,6 +55,10 @@
 
 import MyCard from "../components/MyCard";
 
+function pushRouter(context) {
+  context.$router.push({name: 'pepe', params: {card_qty: context.card_qty.toString(), width: context.width.toString()}})
+}
+
 export default {
   name: 'App',
   components: {
@@ -72,10 +76,10 @@ export default {
   },
   watch: {
     width() {
-      this.$router.push({name: 'pepe', params: {card_qty: this.card_qty.toString(), width: this.width.toString()}})
+      pushRouter(this)
     },
     card_qty() {
-      this.$router.push({name: 'pepe', params: {card_qty: this.card_qty.toString(), width: this.width.toString()}})
+      pushRouter(this)
     }
   }
 };
