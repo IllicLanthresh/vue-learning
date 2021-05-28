@@ -3,24 +3,26 @@
       close-delay="200"
       #default="{ hover }"
   >
-    <v-card
-        :max-width="`${width}px`"
-        class="ma-4"
-        :elevation="hover ? 24 : 6"
-        :loading="!(image_loaded && text_loaded)"
-    >
-      <v-img
-          :src="seededImageUrl"
-          @load="image_loaded = true"
+    <v-lazy>
+      <v-card
+          :max-width="`${width}px`"
+          class="ma-4"
+          :elevation="hover ? 24 : 6"
+          :loading="!(image_loaded && text_loaded)"
       >
-        <v-card-title class="title">
-          {{ title }}
-        </v-card-title>
-      </v-img>
-      <v-card-text>
-        {{ text }}
-      </v-card-text>
-    </v-card>
+        <v-img
+            :src="seededImageUrl"
+            @load="image_loaded = true"
+        >
+          <v-card-title class="title">
+            {{ title }}
+          </v-card-title>
+        </v-img>
+        <v-card-text>
+          {{ text }}
+        </v-card-text>
+      </v-card>
+    </v-lazy>
   </v-hover>
 </template>
 <script>
