@@ -1,12 +1,13 @@
 <template>
   <v-hover
-      close-delay="200"
       #default="{ hover }"
   >
     <v-lazy>
       <v-card
           :max-width="`${width}px`"
           class="ma-4"
+          :style="`opacity: ${hover ? 1 : 0.6}`"
+          style="transition: opacity 1s"
           :elevation="hover ? 24 : 6"
           :loading="!(image_loaded && text_loaded)"
       >
