@@ -56,7 +56,7 @@
 import MyCard from "../components/MyCard";
 
 function pushRouter(context) {
-  context.$router.push({name: 'pepe', params: {card_qty: context.card_qty.toString(), width: context.width.toString()}})
+  context.$router.push({name: 'Cards', params: {card_qty: context.card_qty.toString(), width: context.width.toString()}})
 }
 
 export default {

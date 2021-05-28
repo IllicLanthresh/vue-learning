@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
+import Cards from '../views/Cards'
 
 Vue.use(VueRouter)
 
@@ -8,12 +8,12 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Cards
   },
   {
     path: '/card_qty/:card_qty/width/:width?',
-    name: 'pepe',
-    component: Home
+    name: 'Cards',
+    component: Cards
   },
 ]
 
